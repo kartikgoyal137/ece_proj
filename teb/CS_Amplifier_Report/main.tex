@@ -106,7 +106,6 @@ in SCL 180\,nm CMOS Technology\par}
 \end{tabular}
 
 \vfill
-{\small Report compiled from the Cadence simulation session of 3 September 2026.}
 \vspace{1.0cm}
 \end{titlepage}
 
@@ -249,9 +248,12 @@ PMOS diode      & $\dfrac{1}{g_{m,p}}\parallel r_{o,n}\parallel r_{o,p}$ &
 \end{table}
 
 The diode-connected case is noteworthy: its gain reduces to a \emph{ratio of
-device transconductances}, so it depends only on geometry and mobility ratio
-and is therefore highly linear and process-robust --- but it is also
-intrinsically low, because $1/g_{m,p}$ is a small resistance.
+device transconductances}, so it is set by the device dimensions and the
+mobility ratio rather than by an external component. That gain is
+intrinsically low, however, because the diode connection presents the small
+effective resistance $1/g_{m,p}$ at the output node. In exchange, the load is
+compact --- a single transistor, with no resistor and no external bias
+reference, since the gate--drain short biases it itself.
 
 \subsection{Frequency response}
 Each stage is a single dominant-pole system whose pole is formed by the output
@@ -396,12 +398,12 @@ to place the quiescent output at mid-rail while keeping $I_D$ inside the power
 budget --- the resulting bandwidth is then far in excess of the minimum.
 
 %==============================================================================
-\section{Hand-Calculation Design Point (Q2, Q3 and Q4)}\label{sec:handcalc}
+\section{Chosen Hand-Calculation Design Point (Q2, Q3 and Q4)}\label{sec:handcalc}
 %==============================================================================
 The assignment fixes the \emph{performance targets} (Q1) but leaves the
 designer free to choose the bias current, the overdrive voltage and the process
 constants used for the paper design. This section answers Q2, Q3 and Q4
-directly as a self-contained hand design at the design point specified for the
+directly as a self-contained hand design at the design point chosen for the
 hand calculation, so that each question has an explicit closed-form answer.
 The values used are collected in Table~\ref{tab:handpoint}.
 Section~\ref{sec:calc} then analyses the circuits that were actually built and
@@ -415,10 +417,10 @@ they do --- the measured values govern. See
 Section~\ref{sec:handvsimpl} for the side-by-side comparison, and
 assumption~A9 in Appendix~\ref{app:assumptions}.}
 
-\subsection{The specified design point}
+\subsection{The chosen design point}
 \begin{table}[H]
 \centering
-\caption{Values specified for the hand calculations of Q2--Q4.}
+\caption{Values chosen for the hand calculations of Q2--Q4.}
 \label{tab:handpoint}
 \small
 \begin{tabular}{llcl}
@@ -445,10 +447,10 @@ Drain resistor                  & $R_D$           & $18\U{k\Omega}$     & Q4 \\
 
 Note that Q4 is posed at a \emph{different} operating point ($100\U{\mu A}$,
 $V_{OV}=0.2\U{V}$) from Q2 and Q3 ($500\U{\mu A}$, $V_{OV}=0.25\U{V}$). The two
-are therefore treated as two separate specified cases and are not mixed.
+are therefore treated as two separate chosen cases and are not mixed.
 
 %------------------------------------------------------------------
-\subsection{Q2 --- Transistor sizing at the specified design point}
+\subsection{Q2 --- Transistor sizing at the chosen design point}
 \label{sec:q2}
 %------------------------------------------------------------------
 The saturation drain-current expression \eqref{eq:idsat}, neglecting
@@ -503,7 +505,7 @@ constraint on the bias network designed next.
 
 \begin{table}[H]
 \centering
-\caption{Q2 result --- transistor dimensions at the specified design point.}
+\caption{Q2 result --- transistor dimensions at the chosen design point.}
 \label{tab:q2}
 \begin{tabular}{lccc}
 \toprule
@@ -607,7 +609,7 @@ Every transistor in the bias network and the amplifier must satisfy
 
 \begin{table}[H]
 \centering
-\caption{Q3 result --- bias design and region of operation at the specified
+\caption{Q3 result --- bias design and region of operation at the chosen
 design point.}
 \label{tab:q3}
 \small
@@ -633,11 +635,11 @@ comfortably saturated. The two diode-connected reference devices are saturated
 by construction, since $V_{DS}=V_{GS}$ guarantees $|V_{DS}| > |V_{OV}|$.
 
 %------------------------------------------------------------------
-\subsection{Q4 --- Small-signal hand calculation at the specified
+\subsection{Q4 --- Small-signal hand calculation at the chosen
             operating point}\label{sec:q4}
 %------------------------------------------------------------------
 Q4 asks for the input impedance, the output impedance, the DC gain and the
-$-3\U{dB}$ frequency, calculated theoretically. The specified case is
+$-3\U{dB}$ frequency, calculated theoretically. The chosen case is
 $I_D = 100\U{\mu A}$, $V_{OV} = 0.2\U{V}$, $\lambda = 0.05\U{V^{-1}}$ and a
 resistive load $R_D = 18\U{k\Omega}$, driving the specified $C_L = 50\U{fF}$.
 
@@ -721,7 +723,7 @@ P_{DC} = V_{DD} I_D = (1.8)(100\times10^{-6}) = \mathbf{180\U{\mu W}}
 
 \begin{table}[H]
 \centering
-\caption{Q4 result --- small-signal parameters at the specified operating
+\caption{Q4 result --- small-signal parameters at the chosen operating
 point, and compliance with the Q1 specifications.}
 \label{tab:q4}
 \small
@@ -1059,7 +1061,7 @@ entire shortfall discussed in Section~\ref{sec:tvs}.
 \section{Biasing Circuit Design for the Implemented Circuits}
 \label{sec:biasimpl}
 %==============================================================================
-Section~\ref{sec:q3} answered Q3 at the specified hand-calculation design point
+Section~\ref{sec:q3} answered Q3 at the chosen hand-calculation design point
 ($I_D = 500\U{\mu A}$, mirror ratio $N=10$, $R_{REF}=21\U{k\Omega}$). This
 section applies the same method to the \emph{as-implemented} operating points,
 so that the bias network matches the circuits that were actually simulated, and
@@ -2219,8 +2221,8 @@ A9 & Hand-calculation design point of Section~\ref{sec:handcalc}:
      $R_D=18\U{k\Omega}$ (Q4) &
      The assignment states the performance targets but does not fix the bias
      current, the overdrive voltage or the process constants; these were
-     specified separately for the hand calculation. They are a \textbf{paper
-     design only} --- they are not measurements and do not describe the
+     \textbf{chosen by the author} for the hand calculation. They are a
+     \textbf{paper design only} --- they are not measurements and do not describe the
      simulated circuits. Table~\ref{tab:handvsimpl} sets them against the
      implemented values. All measured results in this report are independent
      of them. \\
