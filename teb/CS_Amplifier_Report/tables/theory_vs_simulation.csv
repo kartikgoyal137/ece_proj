@@ -1,0 +1,22 @@
+Config,Parameter,Units,Theoretical,Simulated,Error_percent
+A_Resistive,Bias current ID,uA,300.0,303.01,1.00
+A_Resistive,Power dissipation,uW,540.0,545.42,1.00
+A_Resistive,Transconductance gm,mS,3.9614,2.91169,-26.50
+A_Resistive,Output resistance Rout,ohm,2391.4,2454.9,2.66
+A_Resistive,Voltage gain |Av0|,V/V,9.473,7.1469,-24.56
+A_Resistive,f_-3dB,MHz,1331.0,1032.76,-22.41
+A_Resistive,Output swing,V,1.494,1.476,-1.21
+B_PMOS_Active,Bias current ID,uA,250.0,243.887,-2.45
+B_PMOS_Active,Power dissipation,uW,450.0,438.99,-2.45
+B_PMOS_Active,Transconductance gm,mS,3.1966,2.34981,-26.49
+B_PMOS_Active,Output resistance Rout,ohm,7321.5,7234.6,-1.19
+B_PMOS_Active,Voltage gain |Av0|,V/V,23.40,17.0,-27.36
+B_PMOS_Active,f_-3dB,MHz,434.7,218.483,-49.74
+B_PMOS_Active,Output swing,V,1.526,1.504,-1.40
+C_PMOS_Diode,Bias current ID,uA,350.0,340.35,-2.76
+C_PMOS_Diode,Power dissipation,uW,630.0,612.63,-2.76
+C_PMOS_Diode,Transconductance gm,mS,6.3323,3.96611,-37.37
+C_PMOS_Diode,Output resistance Rout,ohm,1290.5,922.8,-28.49
+C_PMOS_Diode,Voltage gain |Av0|,V/V,8.172,3.66,-55.21
+C_PMOS_Diode,f_-3dB,MHz,2467.0,1896.06,-23.13
+C_PMOS_Diode,Output swing,V,1.198,0.0648,-94.59

@@ -1,0 +1,6 @@
+Config,Device,Type,W_over_L,L_nm,W_um
+A_Resistive,M0,NMOS,51.8,180,9.33
+B_PMOS_Active,M0,NMOS,41.9,180,7.55
+B_PMOS_Active,M1,PMOS,212.2,180,38.19
+C_PMOS_Diode,M0,NMOS,85.6,180,15.41
+C_PMOS_Diode,M1,PMOS,3.76,180,0.68

@@ -1,0 +1,10 @@
+Quantity,Units,A_Resistive,B_PMOS_Active,C_PMOS_Diode
+Stimulus frequency,MHz,10,10,10
+Input DC level,mV,630,630,590
+Vin_pp,mV,20.00,20.00,10.00
+Quiescent output VOUT_Q,mV,890.971,904.82,139.89
+Vout_pp,mV,142.93,339.64,36.60
+Large-signal gain,V/V,7.147,16.98,3.660
+Gain,dB,17.08,24.60,11.27
+Phase shift at fsig,deg,-180.55,-182.62,-180.30
+Max available swing,mV,1476,1504,64.8

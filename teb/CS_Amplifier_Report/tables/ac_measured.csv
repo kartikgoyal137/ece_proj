@@ -1,0 +1,9 @@
+Quantity,Units,A_Resistive,B_PMOS_Active,C_PMOS_Diode
+Mid-band gain |Av0|,V/V,7.1469,17.0,3.66
+Gain,dB,17.09,24.61,11.27
+-3dB cursor level,V,5.053,12.02,2.588
+f_-3dB,MHz,1032.76,218.483,1896.06
+Gain-bandwidth product,GHz,7.381,3.714,6.940
+Rout extracted,ohm,2454.9,7234.6,922.8
+Ctot extracted,fF,62.79,100.69,90.95
+Implied parasitic Cpar,fF,12.79,50.69,40.95
